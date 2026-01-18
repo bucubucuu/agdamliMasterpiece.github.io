@@ -252,7 +252,13 @@
       border: 1px solid rgba(255,255,255,.32);
       box-shadow: 0 18px 50px rgba(0,0,0,.25) inset;
     }
-    .heart img{ width:100%; height:100%; object-fit: cover; transform: scale(1.08); }
+    .heart img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      object-position: 50% 35%;
+      transform: scale(0.86);
+    }
 
     .closeBtn{
       width: 100%;
@@ -308,15 +314,36 @@
       to{ transform: translate3d(var(--dx), 110vh, 0) rotate(var(--r1)); opacity: 0; }
     }
 
-    @media (max-width: 620px){
-      .card{ padding: 34px 16px 24px; border-radius: 22px; }
-      .photo{ width: 112px; height: 112px; border-radius: 18px; }
+    .photo{ width: 112px; height: 112px; border-radius: 18px; }
       .btnZone{ height: 78px; }
       .btnRow{ height: 78px; }
       .btn{ min-width: 150px; height: 56px; border-radius: 16px; font-size: 15px; }
       .musicPill{ top: 10px; right: 10px; padding: 8px 10px; }
       .heartWrap{ width: 220px; height: 202px; }
     }
+  
+    @media (max-width: 560px){
+      .card{ padding: 28px 14px 18px; border-radius: 22px; }
+      .photo{ width: 108px; height: 108px; border-radius: 18px; margin-bottom: 14px; }
+      h1{ margin-bottom: 18px; }
+
+      /* Stack buttons: perfect for phone */
+      .btnZone{ height: 152px; }
+      .btnRow{ height: 152px; overflow:hidden; }
+      .btn{
+        min-width: 0;
+        width: 100%;
+        height: 58px;
+        border-radius: 18px;
+        font-size: 16px;
+      }
+      #yesBtn{ left: 0; right: 0; top: 0; }
+      #noBtn{ left: 0; right: 0; top: 76px; }
+
+      .musicPill{ top: 10px; right: 10px; padding: 8px 10px; }
+      .heartWrap{ width: 240px; height: 220px; }
+    }
+
   </style>
 </head>
 <body>
@@ -359,7 +386,7 @@
           </div>
         </div>
 
-        <button class="closeBtn" id="closeBtn">OK</button>
+        <button class="closeBtn" id="closeBtn">What a masterpiece</button>
       </div>
     </div>
   </div>
